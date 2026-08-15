@@ -1,0 +1,217 @@
+/*-------- Font-Poppins --------*/
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Angkor&family=Beiruti:wght@200..900&family=Belleza&family=Charm:wght@400;700&family=Crimson+Pro:ital,wght@1,200..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gothic+A1&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Marcellus&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poor+Story&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sora:wght@100..800&family=Syne:wght@400..800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+:root {
+  --primary-color: #d68240;
+  --secondery-color: #fff;
+  --Tertiary-color: #182f31;
+  --card-bg: #121a1d;
+  --paragraph-color: #9c9d9b;
+  --font-Clash-Display: Clash Display;
+  --font-Poppins: "Poppins", sans-serif;
+}
+@font-face {
+  font-family: Clash Display;
+  src: url("../font/ClashDisplay-Variable.woff2");
+}
+.primary-btn {
+  padding: 12px 20px;
+  background: var(--primary-color);
+  border-radius: 26px;
+  transition: 0.2s linear;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.primary-btn::after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: var(--secondery-color);
+  transition: 0.4s ease;
+  z-index: -1;
+}
+.primary-btn span {
+  z-index: 2;
+}
+.primary-btn:hover::after {
+  left: 0;
+}
+.primary-btn:hover span {
+  color: var(--Tertiary-color);
+}
+
+/*================ Navbar ================*/
+.offcanvas {
+  flex-direction: row;
+}
+header {
+  position: absolute;
+  top: 35px;
+  left: 230px;
+  right: 230px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 10%);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(60, 60, 60, 0.808);
+  border-right: 1px solid rgba(60, 60, 60, 0.508);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.navbar {
+  padding: 15px 0;
+}
+.navbar-brand {
+  max-width: 108px;
+}
+.navbar-brand img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.nav-item:not(:last-child) {
+  margin-right: 30px;
+}
+.nav-link {
+  color: var(--secondery-color);
+  font-family: var(--font-Clash-Display);
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.bag-btn {
+  margin-right: 20px;
+  width: 49px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bag-btn::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: var(--primary-color);
+  border-radius: 50%;
+  transition: 0.3s ease;
+  z-index: -1;
+}
+
+.bag-btn:hover::before {
+  width: 100%;
+  height: 100%;
+}
+.nav-btn .login-btn {
+  font-size: 18px;
+  font-family: var(--font-Poppins);
+  letter-spacing: 0.36px;
+  color: var(--secondery-color);
+  text-transform: uppercase;
+}
+/*================ Banner ================*/
+.hero-sec {
+  padding: 300px 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, #0a1316c2, #121a1d22, #0a13169c),
+    url("../assets/banner-bg-2.png") no-repeat center/cover;
+}
+/*================ About-us ================*/
+/*================ Contact-us ================*/
+/*================ Our-chef ================*/
+/*================ Testimonial ================*/
+/*================ Order ================*/
+/*================ News-letter ================*/
+/*================ Footer ================*/
+/*------------ Media Query ------------*/
+@media screen and (max-width: 1440px) {
+  header {
+    left: 100px;
+    right: 100px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .nav-item:not(:last-child) {
+    margin-right: 15px;
+  }
+  .nav-link {
+    color: var(--secondery-color);
+    font-family: var(--font-Clash-Display);
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+}
+@media screen and (max-width: 1024px) {
+  header {
+    top: 30px;
+    left: 70px;
+    right: 70px;
+  }
+  .nav-item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  .nav-link {
+    color: var(--secondery-color);
+    font-family: var(--font-Clash-Display);
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+}
+@media screen and (max-width: 992px) {
+  .offcanvas {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+    top: 20px;
+    left: 50px;
+    right: 50px;
+  }
+}
+@media screen and (max-width: 425px) {
+  header {
+    left: 40px;
+    right: 40px;
+  }
+}
+@media screen and (max-width: 375px) {
+  header {
+    left: 30px;
+    right: 30px;
+  }
+}
+/*================ Navbar ================*/
