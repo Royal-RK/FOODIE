@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
     <link rel="shortcut icon" href="./assets/favicon-32x32.png" type="image/x-icon">
+    <!-- Bootstrap css CDN link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Swiper css CDN link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <!-- Link custom css -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -16,7 +19,7 @@
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <img src="./assets/foodi-logo.png" alt="Brand-logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -27,7 +30,7 @@
                 <div class="offcanvas offcanvas-end" id="offcanvasScrolling">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Menu</a>
@@ -70,22 +73,86 @@
         </nav>
     </header>
     <main>
+        <!-- Hero -->
         <section class="hero-sec">
             <div class="container">
-                <div class="bnr-cnt">
-                    <div class="sub-title">HELLO, NEW FRIEND</div>
-                    <h1 class="title-1">Taste happiness in every bite</h1>
-                    <div class="bnr-btn d-flex justify-content-center">
-                        <div class="explr-btn secondery-btn"><span>EXPLORE MENU</span></div>
-                        <div class="reserv-btn primary-btn"><span>RESERVATION</span></div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="bnr-cnt">
+                                <div class="sub-title">HELLO, NEW FRIEND</div>
+                                <h1 class="title-1">Taste happiness in every bite</h1>
+                                <div class="bnr-btn">
+                                    <a href="" class="explr-btn secondery-btn"><span>EXPLORE MENU</span></a>
+                                    <a href="" class="reserv-btn primary-btn"><span>RESERVATION</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bnr-cnt">
+                                <div class="sub-title">HELLO, NEW FRIEND</div>
+                                <h1 class="title-1">Taste happiness in every bite</h1>
+                                <div class="bnr-btn">
+                                    <a href="" class="explr-btn secondery-btn"><span>EXPLORE MENU</span></a>
+                                    <a href="" class="reserv-btn primary-btn"><span>RESERVATION</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bnr-cnt">
+                                <div class="sub-title">HELLO, NEW FRIEND</div>
+                                <h1 class="title-1">Taste happiness in every bite</h1>
+                                <div class="bnr-btn">
+                                    <a href="" class="explr-btn secondery-btn"><span>EXPLORE MENU</span></a>
+                                    <a href="" class="reserv-btn primary-btn"><span>RESERVATION</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <!-- About -->
+        <section class="about-sec">
+            <div class="container">
+                <div class="row abt-row">
+                    <div class="col-12 col-sm-6">
+                        <div class="abt-cnt">
+                            <div class="sub-title">ABOUT US</div>
+                            <h3 class="title-3">We Invite You to Visit Our Coffee House</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Dolor elit vitae nunc varius. Facilisis eget cras
+                                sit semper sit enim. Turpis aliquet at ac eu donec ut. Sagittis vestibulum at quis non
+                                massa netus.</p>
+                            <a href="" class="read-btn primary-btn"><span>READ MORE</span></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="abt-img">
+                            <img src="./assets/home-about-us.png" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        <section class="featurs-sec">
+            <div class="container">
+                <div class="feature-cnt">
+                    <div class="sub-title">FEATURES</div>
+                    <h3 class="title-3">Why people choose us?</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur. Dolor elit vitae nunc varius. Facilisis eget cras sit
+                        semper sit enim. Turpis aliquet at ac eu donec ut. Sagittis vestibulum at quis non massa netus.
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
+    <!-- Bootstrap js CDN link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <!-- Swiper js CDN link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <!-- Custom Js -->
     <script src="./js/script.js"></script>
 </body>

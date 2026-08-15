@@ -35,8 +35,8 @@ span {
   src: url("../font/ClashDisplay-Variable.woff2");
 }
 body {
-  /* padding-right: 0 !important; */
-  /* overflow-x: hidden !important; */
+  background: #121a1d;
+  color: var(--secondery-color);
 }
 .primary-btn {
   padding: 12px 20px;
@@ -61,7 +61,7 @@ body {
 }
 .primary-btn span {
   color: var(--secondery-color);
-  z-index: 2;
+  z-index: 1;
 }
 .primary-btn:hover::after {
   left: 0;
@@ -93,7 +93,7 @@ body {
 }
 .secondery-btn span {
   color: var(--secondery-color);
-  z-index: 2;
+  z-index: 1;
 }
 .secondery-btn:hover::after {
   left: 0;
@@ -110,11 +110,27 @@ body {
 .secondery-btn:hover span {
   color: var(--Tertiary-color);
 }
+.sub-title {
+  font-family: var(--font-Clash-Display);
+  font-weight: 500;
+  text-transform: uppercase;
+}
 .title-1 {
   font-size: 64px;
   font-family: var(--font-Clash-Display);
   font-weight: 600;
   letter-spacing: 3.2px;
+}
+.title-2 {
+  font-size: 48px;
+  font-family: var(--font-Clash-Display);
+  font-weight: 600;
+}
+.title-3 {
+  font-size: 36px;
+  font-family: var(--font-Clash-Display);
+  font-weight: 600;
+  letter-spacing: 0.72px;
 }
 /*================ Navbar ================*/
 .offcanvas {
@@ -133,7 +149,7 @@ header {
   box-shadow:
     0 8px 20px rgba(0, 0, 0, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  z-index: 1;
+  z-index: 10;
 }
 
 header::before {
@@ -242,33 +258,78 @@ header::before {
 }
 /*================ Banner ================*/
 .hero-sec {
-  padding: 300px 0;
+  padding: 300px 0 36px;
   min-height: 100vh;
   background:
     linear-gradient(180deg, #0a1316c2, #121a1d59, #0a13169c),
     url("../assets/banner-bg-2.png") no-repeat center/cover;
 }
-.sub-title {
-  margin: 0 auto 24px;
+.hero-sec .sub-title {
   font-family: var(--font-Poppins);
   font-weight: 500;
   text-transform: uppercase;
-  color: var(--secondery-color);
+  margin: 8px auto 24px;
   text-align: center;
+  position: relative;
 }
-
+.hero-sec .sub-title::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100px;
+  top: -7px;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-color);
+  z-index: 999;
+}
 .hero-sec .bnr-cnt .title-1 {
   max-width: 750px;
-  color: var(--secondery-color);
   text-transform: uppercase;
   line-height: calc(74 / 64);
   text-align: center;
   margin: 0 auto 30px;
 }
+.bnr-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .bnr-btn .explr-btn {
   margin-right: 20px;
 }
+.swiper-wrapper {
+  margin-bottom: 150px;
+}
+.swiper-pagination {
+  gap: 5px;
+}
+.swiper-pagination-bullet {
+  width: 40px;
+  height: 6px;
+  background: #fff;
+  opacity: 0.7;
+  border-radius: 6px;
+  margin: 0 2px !important;
+  transition: 0.3s ease;
+}
+.swiper-pagination-bullet-active {
+  background: var(--primary-color, #d68240);
+  opacity: 1;
+}
 /*================ About-us ================*/
+.about-sec {
+  padding: 100px 0;
+}
+.about-sec .abt-cnt {
+  max-width: 465px;
+}
+/*================ Features ================*/
+.featurs-sec {
+  padding-bottom: 100px;
+}
+/*================ Menu ================*/
 /*================ Contact-us ================*/
 /*================ Our-chef ================*/
 /*================ Testimonial ================*/
@@ -312,6 +373,9 @@ header::before {
   }
 }
 @media screen and (max-width: 992px) {
+  .title-1 {
+    font-size: 50px;
+  }
   .offcanvas {
     flex-direction: column;
     background: rgba(225, 222, 222, 0.254);
@@ -320,6 +384,7 @@ header::before {
   }
   .nav-btn {
     flex-direction: column;
+    align-items: center;
   }
   .bag-btn {
     margin-right: 0;
@@ -327,16 +392,29 @@ header::before {
   }
 }
 @media screen and (max-width: 768px) {
+  .title-1 {
+    font-size: 40px;
+  }
   header {
     top: 20px;
     left: 50px;
     right: 50px;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 576px) {
+  .title-1 {
+    font-size: 30px;
+  }
   header {
     left: 40px;
     right: 40px;
+  }
+  .bnr-btn {
+    flex-direction: column;
+  }
+  .bnr-btn .explr-btn {
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 }
 @media screen and (max-width: 375px) {
