@@ -25,6 +25,7 @@ span {
   --primary-color: #d68240;
   --secondery-color: #fff;
   --Tertiary-color: #182f31;
+  --body-color: #0a1316;
   --card-bg: #121a1d;
   --paragraph-color: #9c9d9b;
   --font-Clash-Display: Clash Display;
@@ -35,7 +36,7 @@ span {
   src: url("../font/ClashDisplay-Variable.woff2");
 }
 body {
-  background: #121a1d;
+  background: #0a1316;
   color: var(--secondery-color);
 }
 .primary-btn {
@@ -60,6 +61,7 @@ body {
   z-index: -1;
 }
 .primary-btn span {
+  text-transform: uppercase;
   color: var(--secondery-color);
   z-index: 1;
 }
@@ -111,9 +113,36 @@ body {
   color: var(--Tertiary-color);
 }
 .sub-title {
+  font-size: 16px;
   font-family: var(--font-Clash-Display);
   font-weight: 500;
   text-transform: uppercase;
+  letter-spacing: 0.32px;
+  position: relative;
+  margin-bottom: 32px;
+}
+.sub-title.mid-border::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 53px;
+  bottom: -7px;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-color);
+  z-index: 999;
+}
+.sub-title.st-border::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 73px;
+  bottom: -7px;
+  left: 36px;
+  transform: translateX(-50%);
+  background: var(--primary-color);
+  z-index: 999;
 }
 .title-1 {
   font-size: 64px;
@@ -210,7 +239,6 @@ header::before {
   transition: 0.3s ease;
   z-index: -1;
 }
-
 .bag-btn:hover::before {
   width: 100%;
   height: 100%;
@@ -219,8 +247,6 @@ header::before {
   font-size: 18px;
   font-family: var(--font-Poppins);
   letter-spacing: 0.36px;
-  color: var(--secondery-color);
-  text-transform: uppercase;
 }
 .navbar-toggler {
   position: relative;
@@ -259,12 +285,11 @@ header::before {
 /*================ Banner ================*/
 .hero-sec {
   padding: 300px 0 36px;
-  min-height: 100vh;
   background:
-    linear-gradient(180deg, #0a1316c2, #121a1d59, #0a13169c),
+    linear-gradient(180deg, #0a1316d3, #0a13166b, #0a1316a1),
     url("../assets/banner-bg-2.png") no-repeat center/cover;
 }
-.hero-sec .sub-title {
+.hero-sec .bnr-sub-title {
   font-family: var(--font-Poppins);
   font-weight: 500;
   text-transform: uppercase;
@@ -272,11 +297,11 @@ header::before {
   text-align: center;
   position: relative;
 }
-.hero-sec .sub-title::after {
+.hero-sec .bnr-sub-title::after {
   content: "";
   position: absolute;
   height: 2px;
-  width: 100px;
+  width: 73px;
   top: -7px;
   left: 50%;
   right: 50%;
@@ -322,17 +347,182 @@ header::before {
 .about-sec {
   padding: 100px 0;
 }
+.abt-row {
+  align-items: center;
+}
 .about-sec .abt-cnt {
   max-width: 465px;
 }
+.abt-row .abt-cnt .title-3 {
+  margin-bottom: 20px;
+}
+.abt-row .abt-cnt p {
+  font-family: var(--font-Clash-Display);
+  line-height: calc(26 / 16);
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: var(--paragraph-color);
+}
+.abt-row .abt-img {
+  border-radius: 15px;
+  /* max-width: 613px; */
+}
+.abt-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
 /*================ Features ================*/
-.featurs-sec {
+.feature-sec {
   padding-bottom: 100px;
 }
+.feature-cnt {
+  margin: 0 auto 68px;
+  max-width: 787px;
+}
+.feature-cnt .title-3 {
+  margin-bottom: 24px;
+}
+.feature-cnt p {
+  font-family: var(--font-Clash-Display);
+  line-height: calc(26 / 16);
+  font-weight: 500;
+  color: var(--paragraph-color);
+}
+.feature-row {
+  justify-content: space-between;
+}
+.feature-row > div {
+  display: flex;
+  justify-content: center;
+}
+.feature-card {
+  max-width: 347px;
+  transition: 0.3s linear;
+}
+.feature-card .card-img {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  z-index: 1;
+}
+.feature-card .card-img::after {
+  position: absolute;
+  content: "";
+  background: var(--primary-color);
+  width: 0;
+  height: 0;
+  transition: 0.3s ease;
+  z-index: -1;
+}
+.feature-card .card-img:hover:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.feature-card .card-title {
+  font-size: 25px;
+  font-size: var(--font-Poppins);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.feature-card p {
+  font-family: var(--font-Clash-Display);
+  line-height: calc(26 / 16);
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: var(--paragraph-color);
+  text-align: center;
+}
+.feature-card:hover {
+  padding: 5px 0;
+  border-radius: 8px;
+  box-shadow: 2px 4px 20px 2px rgba(145, 145, 145, 0.521);
+}
 /*================ Menu ================*/
+.menu-sec {
+  padding-bottom: 100px;
+}
+.menu-cnt {
+  max-width: 787px;
+  margin: 0 auto 68px;
+}
+.menu-row > div {
+  display: flex;
+  justify-content: center;
+}
+.menu-card {
+  max-width: 424px;
+  padding: 20px 20px 14px;
+  background: var(--card-bg);
+  border-radius: 15px;
+  position: relative;
+}
+.menu-card .card-img {
+  max-width: 404px;
+  margin-bottom: 15px;
+}
+.menu-card .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 15px;
+}
+.menu-card .fav-item-btn {
+  height: 39px;
+  width: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 5%;
+  right: 7%;
+  background: var(--Tertiary-color);
+  border-radius: 50%;
+  transition: 0.3s linear;
+  z-index: 1;
+  cursor: pointer;
+}
+.menu-card .fav-item-btn::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  background: var(--secondery-color);
+  z-index: -1;
+  border-radius: 50%;
+}
+.menu-card .fav-item-btn:hover::before {
+  width: 100%;
+  height: 100%;
+}
+.menu-card .rating {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  gap: 3.5px;
+}
 /*================ Contact-us ================*/
+.contact-sec {
+  padding: 150px 0;
+  background: url("../assets/home-contact-us-bg.png") no-repeat center/cover;
+}
 /*================ Our-chef ================*/
+.chef-sec {
+  padding: 100px 0;
+}
 /*================ Testimonial ================*/
+.testimoni-sec {
+  padding-bottom: 50px;
+}
 /*================ Order ================*/
 /*================ News-letter ================*/
 /*================ Footer ================*/
