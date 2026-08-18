@@ -7,124 +7,461 @@
     <title>Document</title>
 </head>
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #091114;
+    }
+
+
+    /* =========================
+   TESTIMONIAL SECTION
+========================= */
+
+    .testimonial-section {
+        width: 100%;
+        min-height: 100vh;
+        padding: 80px 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #091114;
+    }
+
+
+    /* =========================
+   WRAPPER
+========================= */
+
+    .testimonial-wrapper {
+        position: relative;
+        width: 450px;
+        padding-bottom: 90px;
+    }
+
+
+    /* =========================
+   MAIN CARD
+========================= */
+
     .testimonial-card {
         position: relative;
-        background: var(--card-bg, #121a1d);
-        border-radius: 24px;
-        padding: 40px 32px 32px;
-        max-width: 460px;
-        margin: 60px auto 40px;
+        width: 100%;
+        min-height: 365px;
+        padding: 28px 30px 32px;
+        background: #141b1e;
+        border-radius: 17px;
+
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.25);
+
+        z-index: 1;
     }
 
-    /* Peeche wala offset card */
-    .testimonial-card::before {
-        content: "";
-        position: absolute;
-        top: -20px;
-        left: 20px;
-        right: 20px;
-        bottom: -20px;
-        background: #1a2427;
-        /* thoda lighter shade */
-        border-radius: 24px;
-        z-index: -1;
-    }
+
+    /* =========================
+   QUOTE
+========================= */
 
     .quote-icon {
-        margin-bottom: 20px;
+        font-size: 72px;
+        line-height: 0.7;
+        font-weight: 700;
+        color: #f5b63d;
+
+        font-family: Georgia, serif;
+
+        margin-bottom: 38px;
+
+        transform: rotate(180deg);
+        width: fit-content;
     }
 
+
+    /* =========================
+   REVIEW TEXT
+========================= */
+
     .testimonial-text {
-        color: var(--paragraph-color, #9c9d9b);
+        max-width: 370px;
+
         font-size: 16px;
-        line-height: 1.6;
-        margin-bottom: 20px;
+        line-height: 1.35;
+
+        font-weight: 400;
+
+        color: #a9abad;
+
+        margin-bottom: 22px;
     }
+
+
+    /* =========================
+   RATING
+========================= */
 
     .rating {
         display: flex;
-        gap: 6px;
-        margin-bottom: 30px;
+        align-items: center;
+        gap: 8px;
+
+        font-size: 22px;
+        color: #f5b63d;
     }
 
-    .client-info {
+    .rating .empty-star {
+        font-size: 24px;
+    }
+
+
+    /* =========================
+   USER AREA
+========================= */
+
+    .testimonial-user {
+        position: absolute;
+
+        left: 10px;
+        bottom: 0;
+
+        width: 265px;
+        height: 108px;
+
         display: flex;
         align-items: center;
-        gap: 16px;
-        background: var(--card-bg, #121a1d);
-        padding: 12px;
-        border-radius: 16px;
-        position: relative;
-        z-index: 2;
+
+        padding-left: 10px;
+
+        background: #091114;
+
+        border-radius: 0 18px 0 0;
+
+        z-index: 3;
     }
 
-    .client-img {
-        width: 60px;
-        height: 60px;
+
+    /*
+   Creates the rounded corner
+   above the user area
+*/
+    .testimonial-user::before {
+        content: "";
+
+        position: absolute;
+
+        top: -20px;
+        left: 0;
+
+        width: 20px;
+        height: 20px;
+
+        background: transparent;
+
+        border-bottom-left-radius: 20px;
+
+        box-shadow: -10px 10px 0 #091114;
+    }
+
+
+    /*
+   Right rounded corner of user section
+*/
+    .testimonial-user::after {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        right: -20px;
+
+        width: 20px;
+        height: 20px;
+
+        background: transparent;
+
+        border-top-left-radius: 20px;
+
+        box-shadow: -10px -10px 0 #091114;
+    }
+
+
+    /* =========================
+   USER IMAGE
+========================= */
+
+    .user-image {
+        width: 58px;
+        height: 58px;
+
+        flex-shrink: 0;
+
         border-radius: 50%;
+
+        overflow: hidden;
+
+        border: 2px solid #343a3c;
+    }
+
+    .user-image img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
         object-fit: cover;
     }
 
-    .client-name {
-        color: #fff;
-        font-size: 20px;
-        font-weight: 700;
-        margin-bottom: 4px;
+
+    /* =========================
+   USER INFO
+========================= */
+
+    .user-info {
+        margin-left: 18px;
     }
 
-    .client-location {
-        color: var(--paragraph-color, #9c9d9b);
-        font-size: 14px;
+    .user-info h3 {
+        margin: 0 0 8px;
+
+        color: #f4f4f4;
+
+        font-size: 24px;
+        line-height: 1;
+
+        font-weight: 700;
+    }
+
+    .user-info p {
+        margin: 0;
+
+        color: #8f9294;
+
+        font-size: 19px;
+        line-height: 1;
+
+        font-weight: 400;
+    }
+
+
+    /* =========================
+   RIGHT BOTTOM EXTENSION
+========================= */
+
+    .testimonial-card::after {
+        content: "";
+
+        position: absolute;
+
+        right: 0;
+        bottom: 0;
+
+        width: 180px;
+        height: 110px;
+
+        background: #141b1e;
+
+        transform: translateY(90px);
+
+        border-radius: 0 0 17px 17px;
+
+        z-index: -1;
+    }
+
+
+    /* =========================
+   RESPONSIVE
+========================= */
+
+    @media (max-width: 576px) {
+
+        .testimonial-section {
+            padding: 50px 20px;
+        }
+
+        .testimonial-wrapper {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .testimonial-card {
+            min-height: auto;
+            padding: 25px 25px 30px;
+        }
+
+        .quote-icon {
+            font-size: 62px;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+        }
+
+        .testimonial-user {
+            width: 245px;
+            height: 95px;
+        }
+
+        .user-image {
+            width: 52px;
+            height: 52px;
+        }
+
+        .user-info h3 {
+            font-size: 20px;
+        }
+
+        .user-info p {
+            font-size: 16px;
+        }
+    }
+
+
+    @media (max-width: 380px) {
+
+        .testimonial-user {
+            width: 230px;
+        }
+
+        .user-info {
+            margin-left: 12px;
+        }
+
+        .user-info h3 {
+            font-size: 18px;
+        }
+
+        .user-info p {
+            font-size: 15px;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+        }
+    }
+
+    .counter-section {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .counter-item h3 {
+        margin: 0;
+        font-size: 50px;
+        font-weight: 700;
+    }
+
+    .counter-item p {
+        margin-top: 10px;
+        font-size: 18px;
     }
 </style>
 
 <body>
-    <div class="testimonial-card">
-        <div class="quote-icon">
-            <svg width="40" height="32" viewBox="0 0 40 32" fill="none">
-                <path
-                    d="M0 20.8C0 13.2 2.4 7.2 7.2 2.8C10.4 -0.4 14.4 0 16.4 2.4C18.4 4.8 17.6 8.4 14.8 10C11.6 11.6 10 14 10 17.2C10 19.6 11.6 21.2 14 21.2C17.6 21.2 20 24 20 27.6C20 31.2 17.2 32 13.6 32C6 32 0 27.6 0 20.8Z"
-                    fill="#D68240" />
-                <path
-                    d="M20 20.8C20 13.2 22.4 7.2 27.2 2.8C30.4 -0.4 34.4 0 36.4 2.4C38.4 4.8 37.6 8.4 34.8 10C31.6 11.6 30 14 30 17.2C30 19.6 31.6 21.2 34 21.2C37.6 21.2 40 24 40 27.6C40 31.2 37.2 32 33.6 32C26 32 20 27.6 20 20.8Z"
-                    fill="#D68240" />
-            </svg>
+    <section class="counter-section">
+
+        <div class="counter-item">
+            <h3 class="counter" data-target="1250">0</h3>
+            <p>Total Deliveries</p>
         </div>
-        <p class="testimonial-text">
-            From the moment we walked in, everything felt perfect — the food, the ambiance, and the warm service. It's
-            not just a meal, it's an experience we keep coming back for. Highly recommended for anyone who loves great
-            taste and comfort
-        </p>
-        <div class="rating">
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="#D68240">
-                <path
-                    d="M8.4375 12.8841L13.6519 16.0312L12.2681 10.0997L16.875 6.10875L10.8084 5.59406L8.4375 0L6.06656 5.59406L0 6.10875L4.60687 10.0997L3.22313 16.0312L8.4375 12.8841Z" />
-            </svg>
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="#D68240">
-                <path
-                    d="M8.4375 12.8841L13.6519 16.0312L12.2681 10.0997L16.875 6.10875L10.8084 5.59406L8.4375 0L6.06656 5.59406L0 6.10875L4.60687 10.0997L3.22313 16.0312L8.4375 12.8841Z" />
-            </svg>
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="#D68240">
-                <path
-                    d="M8.4375 12.8841L13.6519 16.0312L12.2681 10.0997L16.875 6.10875L10.8084 5.59406L8.4375 0L6.06656 5.59406L0 6.10875L4.60687 10.0997L3.22313 16.0312L8.4375 12.8841Z" />
-            </svg>
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="#D68240">
-                <path
-                    d="M8.4375 12.8841L13.6519 16.0312L12.2681 10.0997L16.875 6.10875L10.8084 5.59406L8.4375 0L6.06656 5.59406L0 6.10875L4.60687 10.0997L3.22313 16.0312L8.4375 12.8841Z" />
-            </svg>
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="#D68240">
-                <path
-                    d="M8.4375 12.8841L13.6519 16.0312L12.2681 10.0997L16.875 6.10875L10.8084 5.59406L8.4375 0L6.06656 5.59406L0 6.10875L4.60687 10.0997L3.22313 16.0312L8.4375 12.8841Z" />
-            </svg>
+
+        <div class="counter-item">
+            <h3 class="counter" data-target="980">0</h3>
+            <p>Total Feedback</p>
         </div>
-        <div class="client-info">
-            <img src="./assets/client-1.png" alt="Jerome Bell" class="client-img">
-            <div class="client-details">
-                <h4 class="client-name">Jerome Bell</h4>
-                <span class="client-location">New York, USA</span>
+
+        <div class="counter-item">
+            <h3 class="counter" data-target="5000">0</h3>
+            <p>Total Visitors</p>
+        </div>
+
+    </section>
+    <section class="testimonial-section">
+        <div class="testimonial-wrapper">
+
+            <div class="testimonial-card">
+
+                <!-- Quote -->
+                <div class="quote-icon">
+                    “
+                </div>
+
+                <!-- Review -->
+                <p class="testimonial-text">
+                    From the moment we walked in, everything felt perfect —
+                    the food, the ambiance, and the warm service. It’s not just
+                    a meal, it’s an experience we keep coming back for.
+                    Highly recommended for anyone who loves great taste and comfort.
+                </p>
+
+                <!-- Rating -->
+                <div class="rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span class="empty-star">☆</span>
+                </div>
+
             </div>
+
+
+            <!-- User -->
+            <div class="testimonial-user">
+
+                <div class="user-image">
+                    <img src="assets/user.jpg" alt="Jerome Bell">
+                </div>
+
+                <div class="user-info">
+                    <h3>Jerome Bell</h3>
+                    <p>New York, USA</p>
+                </div>
+
+            </div>
+
         </div>
-    </div>
+    </section>
+    <script>
+        const counters = document.querySelectorAll(".counter");
+
+        counters.forEach(counter => {
+
+            const target = +counter.dataset.target;
+
+            let count = 0;
+
+            const updateCounter = () => {
+
+                const increment = target / 100;
+
+                if (count < target) {
+
+                    count += increment;
+
+                    counter.innerText = Math.ceil(count);
+
+                    setTimeout(updateCounter, 20);
+
+                } else {
+
+                    counter.innerText = target;
+
+                }
+            };
+
+            updateCounter();
+
+        });
+    </script>
 </body>
 
 </html>
